@@ -1,6 +1,6 @@
-# VPC Setup Guide
+# Cognito Setup Guide
 
-This guide will help you setup a VPC in AWS.
+This guide will help you setup a Cognito User Pool in AWS.
 
 ## Steps
 
