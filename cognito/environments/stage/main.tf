@@ -24,8 +24,6 @@ locals {
   environment = "stage"
   region      = "us-east-1"
   svc_name    = "app-pool"
-  # svc_prefix  = local.environment
-  # svc_suffix  = "1"
   default_tags = {
     Environment = local.environment
     Terraform   = "true"
@@ -39,9 +37,6 @@ module "cognito" {
 
   default_tags  = local.default_tags
   reply_to_email_address = var.reply_to_email_address
-  # source = "git::
-  # source = "git::XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-  # environment = local.environment
-  # region      = local.region
-  # svc_name    = local.svc_name
+
+  # TODO: add tags
 }
