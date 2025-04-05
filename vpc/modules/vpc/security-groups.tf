@@ -62,3 +62,34 @@ resource "aws_security_group" "ssh" {
     var.default_tags,
   )
 }
+
+resource "aws_security_group" "mongodb" {
+  name        = "mongodb"
+  description = "Security group for MongoDB access"
+  vpc_id      = module.vpc.vpc_id
+  
+  # Inbound rule for MongoDB from 10.0.0.0/16
+  ingress {
+    description = "Allow MongoDB inbound traffic"
+    from_port   = 27015
+    to_port     = 27017
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.0.0/16"]
+  }
+  
+  # Outbound rule for MongoDB to 192.168.0.0/16
+  egress {
+    description = "Allow MongoDB outbound traffic"
+    from_port   = 27015
+    to_port     = 27017
+    protocol    = "tcp"
+    cidr_blocks = ["192.168.0.0/16"]
+  }
+  
+  tags = merge(
+    {
+      Name = "mongo-sg"
+    },
+    var.default_tags,
+  )
+}

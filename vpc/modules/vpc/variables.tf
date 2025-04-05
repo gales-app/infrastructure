@@ -15,6 +15,18 @@ variable "default_tags" {
   default     = {}
 }
 
+variable "enable_nat_gateway" {
+  description = "Enable NAT Gateway"
+  type        = bool
+  default     = true
+}
+
+variable "single_nat_gateway" {
+  description = "Use a single NAT Gateway"
+  type        = bool
+  default     = true
+}
+
 variable "office_ip" {
   type = string
   description = "Office IP address"

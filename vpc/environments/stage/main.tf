@@ -44,6 +44,9 @@ module "vpc" {
   svc_suffix    = local.svc_suffix
   default_tags  = local.default_tags
 
+  enable_nat_gateway = false
+  single_nat_gateway = false
+
   cidr             = local.cidr
   azs              = local.azs
   office_ip        = local.office_ip
