@@ -4,7 +4,7 @@ This guide will help you setup a VPC in AWS.
 
 > !IMPORTANT
 > After adding a peering connection in MongoDB Atlas, you need to modify the routes for each private subnet in the VPC to connect to the Atlas VPC. This is done by adding a route to the Atlas VPC CIDR block with the target being the peering connection ID. The peering connection ID can be found in the MongoDB Atlas UI under Network Peering.  
-> For more details [see Mongo docs](https://www.mongodb.com/docs/atlas/security-vpc-peering/)
+> For more details [see Mongo docs](https://www.mongodb.com/docs/atlas/security-vpc-peering/) and [AWS Docs on VPC Peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html).
 
 ## Nat Gateway
 
