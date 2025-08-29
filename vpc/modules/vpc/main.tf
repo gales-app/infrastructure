@@ -1,3 +1,4 @@
+# Docs: https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
   version = "~> 5.0"

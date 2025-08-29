@@ -3,6 +3,11 @@ output "vpc_id" {
   value       = module.vpc.vpc_id
 }
 
+output "vpc_cidr" {
+  description = "The CIDR block of the VPC"
+  value       = module.vpc.vpc_cidr_block
+}
+
 output "public_subnets" {
   description = "List of IDs of public subnets"
   value       = module.vpc.public_subnets
@@ -26,4 +31,9 @@ output "web_security_group_id" {
 output "ssh_security_group_id" {
   description = "The ID of the SSH security group"
   value       = aws_security_group.ssh.id
+}
+
+output "mongodb_security_group_id" {
+  description = "The ID of the mongodb mongodb group"
+  value       = aws_security_group.mongodb.id
 }
